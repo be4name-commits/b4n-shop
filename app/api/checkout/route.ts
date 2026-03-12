@@ -2,8 +2,20 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2024-12-18.acacia',
+  apiVersion: '2026-02-25.clover',
 });
+
+interface Product {
+  name: string;
+  description: string;
+  price: number;
+  images: string[];
+}
+
+interface CartItem {
+  product: Product;
+  quantity: number;
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,7 +29,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create line items for Stripe
-    const lineItems = items.map((item: any) => ({
+    const lineItems = items.map((item: CartItem) => ({
       price_data: {
         currency: 'chf',
         product_data: {
@@ -41,10 +53,11 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json({ sessionId: session.id, url: session.url });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Stripe checkout error:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Ошибка создания сессии оплаты';
     return NextResponse.json(
-      { error: error.message || 'Ошибка создания сессии оплаты' },
+      { error: errorMessage },
       { status: 500 }
     );
   }

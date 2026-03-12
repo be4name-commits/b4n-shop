@@ -2,11 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { loadStripe } from '@stripe/stripe-js';
 import { useCartStore } from '@/lib/store';
 import { CreditCard, Lock } from 'lucide-react';
-
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '');
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -38,23 +35,16 @@ export default function CheckoutPage() {
         throw new Error(data.error || 'Ошибка при создании сессии оплаты');
       }
 
-      const stripe = await stripePromise;
-      
-      if (!stripe) {
-        throw new Error('Stripe не загружен');
+      // Redirect to Stripe Checkout URL
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error('Не получена ссылка на оплату');
       }
-
-      // Redirect to Stripe Checkout
-      const { error: stripeError } = await stripe.redirectToCheckout({
-        sessionId: data.sessionId,
-      });
-
-      if (stripeError) {
-        throw stripeError;
-      }
-    } catch (err: any) {
+    } catch (err) {
       console.error('Checkout error:', err);
-      setError(err.message || 'Произошла ошибка при оформлении заказа');
+      const errorMessage = err instanceof Error ? err.message : 'Произошла ошибка при оформлении заказа';
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
