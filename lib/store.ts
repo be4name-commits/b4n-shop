@@ -9,6 +9,12 @@ export type Product = {
   currency: string;
   images: string[];
   category?: string;
+  sku?: string;
+  material?: string;
+  dimensions?: string;
+  color?: string;
+  b2bPrice?: number;
+  gender?: string;
 };
 
 export type CartItem = {

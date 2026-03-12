@@ -1,0 +1,681 @@
+{
+  "version": "1.0",
+  "updated": "2026-01-10",
+  "total_products": 23,
+  "categories": [
+    "Wallets",
+    "Cosmetic Bags",
+    "Toiletry Bags",
+    "Belts",
+    "Footwear"
+  ],
+  "products": [
+    {
+      "sku": "305610",
+      "names": {
+        "en": "Card Case",
+        "de": "Kartenetui",
+        "fr": "Porte-Cartes",
+        "it": "Portacarte"
+      },
+      "category": "Wallets",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "80×100 mm",
+      "gender": "Unisex",
+      "features": {
+        "en": "6-10 card slots",
+        "fr": "6-10 emplacements pour cartes",
+        "it": "6-10 slot per carte"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 26.0,
+        "b2b_chf": 20.8
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "805610",
+      "names": {
+        "en": "Women's Cosmetic Bag",
+        "de": "Damen-Kosmetiktasche",
+        "fr": "Trousse de Maquillage Femme",
+        "it": "Trousse per Cosmetici Donna"
+      },
+      "category": "Cosmetic Bags",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "240×110×75 mm",
+      "gender": "Women",
+      "features": {
+        "en": "2 compartments, mirror",
+        "fr": "2 compartiments, miroir",
+        "it": "2 scomparti, specchio"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 86.0,
+        "b2b_chf": 68.8
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "805660",
+      "names": {
+        "en": "Women's Cosmetic Bag",
+        "de": "Damen-Kosmetiktasche",
+        "fr": "Trousse de Maquillage Femme",
+        "it": "Trousse per Cosmetici Donna"
+      },
+      "category": "Cosmetic Bags",
+      "colors": {
+        "en": "Red",
+        "fr": "Rouge",
+        "it": "Rosso"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "240×110×75 mm",
+      "gender": "Women",
+      "features": {
+        "en": "1 compartment, mirror",
+        "fr": "1 compartiment, miroir",
+        "it": "1 scomparto, specchio"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 86.0,
+        "b2b_chf": 68.8
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "803610",
+      "names": {
+        "en": "Men's Toiletry Bag",
+        "de": "Herren-Kulturbeutel",
+        "fr": "Trousse de Toilette Homme",
+        "it": "Trousse da Toilette Uomo"
+      },
+      "category": "Toiletry Bags",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "180×95×95 mm",
+      "gender": "Men",
+      "features": {
+        "en": "1 compartment, handle",
+        "fr": "1 compartiment, poignée",
+        "it": "1 scomparto, maniglia"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 86.0,
+        "b2b_chf": 68.8
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "803623",
+      "names": {
+        "en": "Men's Toiletry Bag",
+        "de": "Herren-Kulturbeutel",
+        "fr": "Trousse de Toilette Homme",
+        "it": "Trousse da Toilette Uomo"
+      },
+      "category": "Toiletry Bags",
+      "colors": {
+        "en": "Brown",
+        "fr": "Marron",
+        "it": "Marrone"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "180×95×95 mm",
+      "gender": "Men",
+      "features": {
+        "en": "1 compartment, handle",
+        "fr": "1 compartiment, poignée",
+        "it": "1 scomparto, maniglia"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 86.0,
+        "b2b_chf": 68.8
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "804610",
+      "names": {
+        "en": "Men's Toiletry Bag Large",
+        "de": "Herren-Kulturbeutel Gross",
+        "fr": "Grande Trousse de Toilette Homme",
+        "it": "Grande Trousse da Toilette Uomo"
+      },
+      "category": "Toiletry Bags",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "230×110×110 mm",
+      "gender": "Men",
+      "features": {
+        "en": "1 large compartment",
+        "fr": "1 grand compartiment",
+        "it": "1 grande scomparto"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 97.0,
+        "b2b_chf": 77.60000000000001
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "505610",
+      "names": {
+        "en": "Compact Wallet",
+        "de": "Kompaktes Portemonnaie",
+        "fr": "Portefeuille Compact",
+        "it": "Portafoglio Compatto"
+      },
+      "category": "Wallets",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "110×90×15 mm",
+      "gender": "Unisex",
+      "features": {
+        "en": "Magnetic closure, 3 cards",
+        "fr": "Fermeture magnétique, 3 cartes",
+        "it": "Chiusura magnetica, 3 carte"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 101.0,
+        "b2b_chf": 80.80000000000001
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "505620",
+      "names": {
+        "en": "Compact Wallet",
+        "de": "Kompaktes Portemonnaie",
+        "fr": "Portefeuille Compact",
+        "it": "Portafoglio Compatto"
+      },
+      "category": "Wallets",
+      "colors": {
+        "en": "Brown",
+        "fr": "Marron",
+        "it": "Marrone"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "110×90×15 mm",
+      "gender": "Unisex",
+      "features": {
+        "en": "Magnetic closure, 3 cards",
+        "fr": "Fermeture magnétique, 3 cartes",
+        "it": "Chiusura magnetica, 3 carte"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 101.0,
+        "b2b_chf": 80.80000000000001
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "516410",
+      "names": {
+        "en": "Bi-Fold Wallet",
+        "de": "Bi-Fold Portemonnaie",
+        "fr": "Portefeuille Bi-Fold",
+        "it": "Portafoglio Bi-Fold"
+      },
+      "category": "Wallets",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "110×90×15 mm",
+      "gender": "Men",
+      "features": {
+        "en": "Magnetic closure, 12 cards",
+        "fr": "Fermeture magnétique, 12 cartes",
+        "it": "Chiusura magnetica, 12 carte"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 114.0,
+        "b2b_chf": 91.2
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "520610",
+      "names": {
+        "en": "Long Wallet",
+        "de": "Langes Portemonnaie",
+        "fr": "Portefeuille Long",
+        "it": "Portafoglio Lungo"
+      },
+      "category": "Wallets",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "200×100×15 mm",
+      "gender": "Unisex",
+      "features": {
+        "en": "15 card slots, 4 bill compartments",
+        "fr": "15 emplacements pour cartes, 4 compartiments pour billets",
+        "it": "15 slot per carte, 4 scomparti per banconote"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 115.0,
+        "b2b_chf": 92.0
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "524610",
+      "names": {
+        "en": "Women's Long Wallet",
+        "de": "Damen-Portemonnaie",
+        "fr": "Portefeuille Long Femme",
+        "it": "Portafoglio Lungo Donna"
+      },
+      "category": "Wallets",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "180×90×15 mm",
+      "gender": "Women",
+      "features": {
+        "en": "7 cards, 4 bills, snap",
+        "fr": "7 cartes, 4 billets, bouton-pression",
+        "it": "7 carte, 4 banconote, bottone a pressione"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 109.0,
+        "b2b_chf": 87.2
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "524660",
+      "names": {
+        "en": "Women's Long Wallet",
+        "de": "Damen-Portemonnaie",
+        "fr": "Portefeuille Long Femme",
+        "it": "Portafoglio Lungo Donna"
+      },
+      "category": "Wallets",
+      "colors": {
+        "en": "Red",
+        "fr": "Rouge",
+        "it": "Rosso"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "180×90×15 mm",
+      "gender": "Women",
+      "features": {
+        "en": "7 cards, 4 bills, snap",
+        "fr": "7 cartes, 4 billets, bouton-pression",
+        "it": "7 carte, 4 banconote, bottone a pressione"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 109.0,
+        "b2b_chf": 87.2
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "21030030033",
+      "names": {
+        "en": "Women's Belt",
+        "de": "Damen-Gürtel",
+        "fr": "Ceinture Femme",
+        "it": "Cintura Donna"
+      },
+      "category": "Belts",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "1100×20 mm",
+      "gender": "Women",
+      "features": {
+        "en": "Classic buckle, 20mm",
+        "fr": "Boucle classique, 20mm",
+        "it": "Fibbia classica, 20mm"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 46.0,
+        "b2b_chf": 36.8
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "21330030033",
+      "names": {
+        "en": "Women's Belt",
+        "de": "Damen-Gürtel",
+        "fr": "Ceinture Femme",
+        "it": "Cintura Donna"
+      },
+      "category": "Belts",
+      "colors": {
+        "en": "Brown",
+        "fr": "Marron",
+        "it": "Marrone"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "1100×20 mm",
+      "gender": "Women",
+      "features": {
+        "en": "Classic buckle, 20mm",
+        "fr": "Boucle classique, 20mm",
+        "it": "Fibbia classica, 20mm"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 46.0,
+        "b2b_chf": 36.8
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "310011261",
+      "names": {
+        "en": "Unisex Belt",
+        "de": "Unisex-Gürtel",
+        "fr": "Ceinture Unisexe",
+        "it": "Cintura Unisex"
+      },
+      "category": "Belts",
+      "colors": {
+        "en": "Blue",
+        "fr": "Bleu",
+        "it": "Blu"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "1200×35 mm",
+      "gender": "Unisex",
+      "features": {
+        "en": "Classic buckle, 35mm",
+        "fr": "Boucle classique, 35mm",
+        "it": "Fibbia classica, 35mm"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 58.0,
+        "b2b_chf": 46.40000000000001
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "313011261",
+      "names": {
+        "en": "Unisex Belt",
+        "de": "Unisex-Gürtel",
+        "fr": "Ceinture Unisexe",
+        "it": "Cintura Unisex"
+      },
+      "category": "Belts",
+      "colors": {
+        "en": "Brown",
+        "fr": "Marron",
+        "it": "Marrone"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "1200×35 mm",
+      "gender": "Unisex",
+      "features": {
+        "en": "Classic buckle, 35mm",
+        "fr": "Boucle classique, 35mm",
+        "it": "Fibbia classica, 35mm"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 58.0,
+        "b2b_chf": 46.40000000000001
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "410011200",
+      "names": {
+        "en": "Unisex Belt",
+        "de": "Unisex-Gürtel",
+        "fr": "Ceinture Unisexe",
+        "it": "Cintura Unisex"
+      },
+      "category": "Belts",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "1200×40 mm",
+      "gender": "Unisex",
+      "features": {
+        "en": "Classic buckle, 40mm",
+        "fr": "Boucle classique, 40mm",
+        "it": "Fibbia classica, 40mm"
+      },
+      "packaging": "Felt pouch",
+      "pricing": {
+        "retail_chf": 58.0,
+        "b2b_chf": 46.40000000000001
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "SANDALS-36",
+      "names": {
+        "en": "Women's Sandals",
+        "de": "Damen-Sandalen",
+        "fr": "Sandales Femme",
+        "it": "Sandali Donna"
+      },
+      "category": "Footwear",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "Size 36",
+      "gender": "Women",
+      "features": {
+        "en": "Classic buckle",
+        "fr": "Boucle classique",
+        "it": "Fibbia classica"
+      },
+      "packaging": "Standard",
+      "pricing": {
+        "retail_chf": 58.0,
+        "b2b_chf": 46.40000000000001
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "LOAFER-3170-BR",
+      "names": {
+        "en": "Women's Loafers 3170",
+        "de": "Damen-Loafer 3170",
+        "fr": "Mocassins Femme 3170",
+        "it": "Mocassini Donna 3170"
+      },
+      "category": "Footwear",
+      "colors": {
+        "en": "Brown",
+        "fr": "Marron",
+        "it": "Marrone"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "Size 36",
+      "gender": "Women",
+      "features": {
+        "en": "Slip-on, 3-season",
+        "fr": "Sans lacets, 3 saisons",
+        "it": "Slip-on, 3 stagioni"
+      },
+      "packaging": "Kraft box + pouch",
+      "pricing": {
+        "retail_chf": 160.0,
+        "b2b_chf": 128.0
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "LOAFER-3170-BK",
+      "names": {
+        "en": "Women's Loafers 3170",
+        "de": "Damen-Loafer 3170",
+        "fr": "Mocassins Femme 3170",
+        "it": "Mocassini Donna 3170"
+      },
+      "category": "Footwear",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "Size 36",
+      "gender": "Women",
+      "features": {
+        "en": "Slip-on, 3-season",
+        "fr": "Sans lacets, 3 saisons",
+        "it": "Slip-on, 3 stagioni"
+      },
+      "packaging": "Kraft box + pouch",
+      "pricing": {
+        "retail_chf": 191.0,
+        "b2b_chf": 152.8
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "LOAFER-ASTRA-BK",
+      "names": {
+        "en": "Women's Loafers Astra",
+        "de": "Damen-Loafer Astra",
+        "fr": "Mocassins Femme Astra",
+        "it": "Mocassini Donna Astra"
+      },
+      "category": "Footwear",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "Size 36",
+      "gender": "Women",
+      "features": {
+        "en": "Slip-on, 3-season",
+        "fr": "Sans lacets, 3 saisons",
+        "it": "Slip-on, 3 stagioni"
+      },
+      "packaging": "Kraft box + pouch",
+      "pricing": {
+        "retail_chf": 188.0,
+        "b2b_chf": 150.4
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "LOAFER-ASTRA-BG",
+      "names": {
+        "en": "Women's Loafers Astra",
+        "de": "Damen-Loafer Astra",
+        "fr": "Mocassins Femme Astra",
+        "it": "Mocassini Donna Astra"
+      },
+      "category": "Footwear",
+      "colors": {
+        "en": "Beige",
+        "fr": "Beige",
+        "it": "Beige"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "Size 36",
+      "gender": "Women",
+      "features": {
+        "en": "Slip-on, 3-season",
+        "fr": "Sans lacets, 3 saisons",
+        "it": "Slip-on, 3 stagioni"
+      },
+      "packaging": "Kraft box + pouch",
+      "pricing": {
+        "retail_chf": 182.0,
+        "b2b_chf": 145.6
+      },
+      "galaxus_ready": "YES"
+    },
+    {
+      "sku": "LOAFER-HILLARY",
+      "names": {
+        "en": "Women's Loafers Hillary",
+        "de": "Damen-Loafer Hillary",
+        "fr": "Mocassins Femme Hillary",
+        "it": "Mocassini Donna Hillary"
+      },
+      "category": "Footwear",
+      "colors": {
+        "en": "Black",
+        "fr": "Noir",
+        "it": "Nero"
+      },
+      "material": "Genuine Leather",
+      "dimensions": "Size 36",
+      "gender": "Women",
+      "features": {
+        "en": "Slip-on, 3-season",
+        "fr": "Sans lacets, 3 saisons",
+        "it": "Slip-on, 3 stagioni"
+      },
+      "packaging": "Kraft box + pouch",
+      "pricing": {
+        "retail_chf": 179.0,
+        "b2b_chf": 143.2
+      },
+      "galaxus_ready": "YES"
+    }
+  ]
+}
