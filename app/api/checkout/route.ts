@@ -1,9 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2026-02-25.clover',
-});
+function getStripeInstance() {
+  const secretKey = process.env.STRIPE_SECRET_KEY;
+  
+  if (!secretKey || secretKey === 'НУЖЕН_СЕКРЕТНЫЙ_КЛЮЧ') {
+    throw new Error('STRIPE_SECRET_KEY не настроен! Получите ключ на dashboard.stripe.com');
+  }
+  
+  return new Stripe(secretKey, {
+    apiVersion: '2026-02-25.clover',
+  });
+}
 
 interface Product {
   name: string;
@@ -19,6 +27,7 @@ interface CartItem {
 
 export async function POST(request: NextRequest) {
   try {
+    const stripe = getStripeInstance();
     const { items } = await request.json();
 
     if (!items || items.length === 0) {
