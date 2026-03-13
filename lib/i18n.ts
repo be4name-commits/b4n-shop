@@ -1,0 +1,88 @@
+export type Locale = 'en' | 'de' | 'fr' | 'it';
+
+export const locales: Locale[] = ['en', 'de', 'fr', 'it'];
+
+export const defaultLocale: Locale = 'en';
+
+export const translations = {
+  en: {
+    catalog: 'Product Catalog',
+    search: 'Search products...',
+    cart: 'Cart',
+    checkout: 'Checkout',
+    b2b: 'B2B',
+    home: 'Home',
+    products: 'Products',
+    allCategories: 'All Categories',
+    price: 'Price',
+    addToCart: 'Add to Cart',
+    buy: 'Buy',
+    description: 'Description',
+    specifications: 'Specifications',
+    material: 'Material',
+    dimensions: 'Dimensions',
+    color: 'Color',
+    currency: 'CHF',
+  },
+  de: {
+    catalog: 'Produktkatalog',
+    search: 'Produkte suchen...',
+    cart: 'Warenkorb',
+    checkout: 'Kasse',
+    b2b: 'B2B',
+    home: 'Startseite',
+    products: 'Produkte',
+    allCategories: 'Alle Kategorien',
+    price: 'Preis',
+    addToCart: 'In den Warenkorb',
+    buy: 'Kaufen',
+    description: 'Beschreibung',
+    specifications: 'Spezifikationen',
+    material: 'Material',
+    dimensions: 'Abmessungen',
+    color: 'Farbe',
+    currency: 'CHF',
+  },
+  fr: {
+    catalog: 'Catalogue de produits',
+    search: 'Rechercher des produits...',
+    cart: 'Panier',
+    checkout: 'Commander',
+    b2b: 'B2B',
+    home: 'Accueil',
+    products: 'Produits',
+    allCategories: 'Toutes les catégories',
+    price: 'Prix',
+    addToCart: 'Ajouter au panier',
+    buy: 'Acheter',
+    description: 'Description',
+    specifications: 'Spécifications',
+    material: 'Matériel',
+    dimensions: 'Dimensions',
+    color: 'Couleur',
+    currency: 'CHF',
+  },
+  it: {
+    catalog: 'Catalogo prodotti',
+    search: 'Cerca prodotti...',
+    cart: 'Carrello',
+    checkout: 'Pagamento',
+    b2b: 'B2B',
+    home: 'Home',
+    products: 'Prodotti',
+    allCategories: 'Tutte le categorie',
+    price: 'Prezzo',
+    addToCart: 'Aggiungi al carrello',
+    buy: 'Acquista',
+    description: 'Descrizione',
+    specifications: 'Specifiche',
+    material: 'Materiale',
+    dimensions: 'Dimensioni',
+    color: 'Colore',
+    currency: 'CHF',
+  },
+};
+
+export function getTranslation(locale: Locale, key: keyof typeof translations.en): string {
+  return translations[locale][key] || translations.en[key];
+}

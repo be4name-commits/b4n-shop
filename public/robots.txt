@@ -1,0 +1,8 @@
+# Robots.txt for be4name.ch
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /checkout/
+Disallow: /cart/
+
+Sitemap: https://be4name.ch/sitemap.xml
