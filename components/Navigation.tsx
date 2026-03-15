@@ -1,17 +1,16 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ShoppingCart } from 'lucide-react';
 import { useCartStore } from '@/lib/store';
 import LanguageSelector from './LanguageSelector';
-import { Locale } from '@/lib/i18n';
+import { useLocale } from './LocaleContext';
 
 export default function Navigation() {
   const pathname = usePathname();
   const itemCount = useCartStore((state) => state.items.length);
-  const [currentLocale, setCurrentLocale] = useState<Locale>('en');
+  const { locale, setLocale } = useLocale();
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -40,8 +39,8 @@ export default function Navigation() {
           ))}
           
           <LanguageSelector
-            currentLocale={currentLocale}
-            onLocaleChange={setCurrentLocale}
+            currentLocale={locale}
+            onLocaleChange={setLocale}
           />
           
           <Link

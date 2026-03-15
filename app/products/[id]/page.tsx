@@ -48,8 +48,8 @@ export default function ProductPage() {
           Назад
         </button>
 
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="grid md:grid-cols-2 gap-8 p-8">
+        <div className="bg-white rounded-lg shadow-xl overflow-hidden border border-gray-100">
+          <div className="grid md:grid-cols-2 gap-8 p-8 md:p-10">
             {/* Image Gallery */}
             <div>
               <div className="relative h-96 bg-gray-200 rounded-lg overflow-hidden mb-4">
@@ -114,19 +114,19 @@ export default function ProductPage() {
 
               <button
                 onClick={handleAddToCart}
-                className={`w-full flex items-center justify-center gap-3 py-4 px-6 rounded-lg text-lg font-semibold transition-all ${
+                className={`w-full flex items-center justify-center gap-3 py-4 px-6 rounded-lg text-lg font-semibold transition-all shadow-lg hover:shadow-xl ${
                   added
                     ? 'bg-green-600 text-white'
-                    : 'bg-purple-600 hover:bg-purple-700 text-white'
+                    : 'bg-black hover:bg-white hover:text-black border-2 border-black text-white'
                 }`}
               >
                 <ShoppingCart className="w-6 h-6" />
                 {added ? 'Добавлено в корзину!' : 'Добавить в корзину'}
               </button>
 
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                <h3 className="font-semibold mb-2">Гарантии:</h3>
-                <ul className="text-sm text-gray-600 space-y-1">
+              <div className="mt-6 p-5 bg-gray-50 rounded-lg border border-gray-200 shadow-sm">
+                <h3 className="font-semibold mb-3 text-gray-900">Гарантии:</h3>
+                <ul className="text-sm text-gray-600 space-y-2">
                   <li>✓ Швейцарское качество</li>
                   <li>✓ Безопасная оплата через Stripe</li>
                   <li>✓ Быстрая доставка</li>

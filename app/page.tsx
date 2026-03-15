@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { useLocale } from '@/components/LocaleContext';
+import { getTranslation } from '@/lib/i18n';
 
 // Товары для первой карусели (ремни и обувь)
 const carousel1Items = [
@@ -109,6 +111,9 @@ function ProductCarousel({ items }: { items: typeof carousel1Items }) {
 }
 
 export default function Home() {
+  const { locale } = useLocale();
+  const t = (key: keyof typeof import('@/lib/i18n').translations.en) => getTranslation(locale, key);
+
   return (
     <main className="min-h-screen bg-white">
       {/* 2x2 Grid Container */}
@@ -119,44 +124,45 @@ export default function Home() {
         </div>
 
         {/* Block 2: Top Right - Text Block with CTA */}
-        <div className="relative h-[50vh] md:h-full bg-white flex items-center justify-center p-8 md:p-12">
+        <div className="relative h-[50vh] md:h-full bg-white flex items-center justify-center p-8 md:p-12 border-b md:border-b-0 md:border-l border-gray-200">
           <div className="text-center max-w-md">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
-              Premium Leather Accessories
+              {t('heroTitle')}
             </h1>
             <p className="text-gray-600 text-lg mb-8">
-              Swiss quality craftsmanship
+              {t('heroSubtitle')}
             </p>
             <Link
               href="/products"
-              className="inline-block bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold transition-colors"
+              className="inline-block bg-black hover:bg-white hover:text-black border-2 border-black text-white px-8 py-4 text-lg font-semibold transition-all shadow-lg hover:shadow-xl"
             >
-              Shop Collection
+              {t('heroButton')}
             </Link>
           </div>
         </div>
 
         {/* Block 3: Bottom Left - B2B Text Block (Black Background) */}
-        <div className="relative h-[50vh] md:h-full bg-black flex items-center justify-center p-8 md:p-12">
+        <div className="relative h-[50vh] md:h-full bg-black flex items-center justify-center p-8 md:p-12 border-t border-gray-800">
           <div className="text-center max-w-md">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              B2B Partners Welcome
+              {t('b2bTitle')}
             </h2>
             <p className="text-gray-300 text-lg mb-8">
-              Special wholesale pricing for retailers
+              {t('b2bSubtitle')}
             </p>
             <a
               href="/b2b-presentation.pdf"
-              download
-              className="inline-block bg-white hover:bg-gray-200 text-black px-8 py-4 text-lg font-semibold transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white hover:bg-black hover:text-white border-2 border-white text-black px-8 py-4 text-lg font-semibold transition-all shadow-lg hover:shadow-xl"
             >
-              Download Catalog
+              {t('b2bButton')}
             </a>
           </div>
         </div>
 
         {/* Block 4: Bottom Right - Carousel 2 (Wallets & Cosmetic Bags) */}
-        <div className="relative h-[50vh] md:h-full bg-gray-100">
+        <div className="relative h-[50vh] md:h-full bg-gray-100 border-t md:border-l border-gray-200">
           <ProductCarousel items={carousel2Items} />
         </div>
       </div>

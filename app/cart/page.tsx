@@ -34,11 +34,11 @@ export default function CartPage() {
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold mb-8">Корзина</h1>
 
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <div className="bg-white rounded-lg shadow-xl p-6 mb-6 border border-gray-100">
           {items.map((item) => (
             <div
               key={item.product.id}
-              className="flex gap-6 py-6 border-b last:border-b-0"
+              className="flex gap-6 py-6 border-b last:border-b-0 border-gray-200"
             >
               <div className="relative w-32 h-32 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
                 {item.product.images[0] ? (
@@ -101,8 +101,8 @@ export default function CartPage() {
           ))}
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <div className="flex justify-between items-center mb-6">
+        <div className="bg-white rounded-lg shadow-xl p-6 border border-gray-100">
+          <div className="flex justify-between items-center mb-6 pb-4 border-b border-gray-200">
             <span className="text-2xl font-bold">Итого:</span>
             <span className="text-3xl font-bold text-purple-600">
               {getTotal().toFixed(2)} CHF
@@ -111,7 +111,7 @@ export default function CartPage() {
 
           <button
             onClick={() => router.push('/checkout')}
-            className="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 rounded-lg text-lg font-semibold transition-colors"
+            className="w-full bg-black hover:bg-white hover:text-black border-2 border-black text-white py-4 rounded-lg text-lg font-semibold transition-all shadow-lg hover:shadow-xl"
           >
             Перейти к оплате
           </button>

@@ -48,20 +48,20 @@ export default function ProductsPage() {
         
         {/* Products Grid */}
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredProducts.map((product) => (
               <Link
                 key={product.id}
                 href={`/products/${product.id}`}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100"
               >
-                <div className="relative h-64 bg-gray-200">
+                <div className="relative h-64 bg-gray-200 overflow-hidden">
                   {product.images[0] ? (
                     <Image
                       src={product.images[0]}
                       alt={product.name}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-gray-400">
@@ -70,18 +70,18 @@ export default function ProductsPage() {
                   )}
                 </div>
                 
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-600 transition-colors">
+                <div className="p-5 border-t border-gray-100">
+                  <h3 className="text-lg font-bold mb-2 group-hover:text-purple-600 transition-colors">
                     {product.name}
                   </h3>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                     {product.description}
                   </p>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center pt-3 border-t border-gray-100">
                     <span className="text-2xl font-bold text-purple-600">
                       {product.price.toFixed(2)} {product.currency}
                     </span>
-                    <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                    <button className="bg-black hover:bg-white hover:text-black border-2 border-black text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-md hover:shadow-lg">
                       Buy
                     </button>
                   </div>

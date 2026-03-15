@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import CookieBanner from "@/components/CookieBanner";
+import { LocaleProvider } from "@/components/LocaleContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,16 +34,18 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
       </head>
       <body className={inter.className}>
-        <Navigation />
-        {children}
-        <footer className="bg-slate-900 text-white py-8 px-4">
-          <div className="max-w-6xl mx-auto text-center">
-            <p className="text-sm text-gray-400">
-              © 2024-2026 B4N - Be4Name. All rights reserved.
-            </p>
-          </div>
-        </footer>
-        <CookieBanner />
+        <LocaleProvider>
+          <Navigation />
+          {children}
+          <footer className="bg-slate-900 text-white py-8 px-4">
+            <div className="max-w-6xl mx-auto text-center">
+              <p className="text-sm text-gray-400">
+                © 2024-2026 B4N - Be4Name. All rights reserved.
+              </p>
+            </div>
+          </footer>
+          <CookieBanner />
+        </LocaleProvider>
       </body>
     </html>
   );

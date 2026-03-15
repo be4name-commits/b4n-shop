@@ -23,6 +23,13 @@ export const translations = {
     dimensions: 'Dimensions',
     color: 'Color',
     currency: 'CHF',
+    // Homepage banners
+    heroTitle: 'Premium Leather Accessories',
+    heroSubtitle: 'Swiss quality craftsmanship',
+    heroButton: 'Shop Collection',
+    b2bTitle: 'B2B Partners Welcome',
+    b2bSubtitle: 'Special wholesale pricing for retailers',
+    b2bButton: 'Download Catalog',
   },
   de: {
     catalog: 'Produktkatalog',
@@ -42,6 +49,13 @@ export const translations = {
     dimensions: 'Abmessungen',
     color: 'Farbe',
     currency: 'CHF',
+    // Homepage banners
+    heroTitle: 'Premium Lederaccessoires',
+    heroSubtitle: 'Schweizer Qualitätshandwerk',
+    heroButton: 'Kollektion ansehen',
+    b2bTitle: 'B2B-Partner willkommen',
+    b2bSubtitle: 'Spezielle Großhandelspreise für Händler',
+    b2bButton: 'Katalog herunterladen',
   },
   fr: {
     catalog: 'Catalogue de produits',
@@ -61,6 +75,13 @@ export const translations = {
     dimensions: 'Dimensions',
     color: 'Couleur',
     currency: 'CHF',
+    // Homepage banners
+    heroTitle: 'Accessoires en cuir premium',
+    heroSubtitle: 'Artisanat suisse de qualité',
+    heroButton: 'Voir la collection',
+    b2bTitle: 'Partenaires B2B bienvenus',
+    b2bSubtitle: 'Prix de gros spéciaux pour les détaillants',
+    b2bButton: 'Télécharger le catalogue',
   },
   it: {
     catalog: 'Catalogo prodotti',
@@ -80,6 +101,13 @@ export const translations = {
     dimensions: 'Dimensioni',
     color: 'Colore',
     currency: 'CHF',
+    // Homepage banners
+    heroTitle: 'Accessori in pelle premium',
+    heroSubtitle: 'Artigianato svizzero di qualità',
+    heroButton: 'Vedi la collezione',
+    b2bTitle: 'Partner B2B benvenuti',
+    b2bSubtitle: 'Prezzi all\'ingrosso speciali per rivenditori',
+    b2bButton: 'Scarica il catalogo',
   },
 };
 
