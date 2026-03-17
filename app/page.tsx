@@ -124,37 +124,37 @@ export default function Home() {
         </div>
 
         {/* Block 2: Top Right - Text Block with CTA */}
-        <div className="relative h-[50vh] md:h-full bg-white flex items-center justify-center p-8 md:p-12 border-b md:border-b-0 md:border-l border-gray-200">
+        <div className="relative h-[50vh] md:h-full bg-gradient-to-br from-white to-gray-50 flex items-center justify-center p-8 md:p-12 border-b md:border-b-0 md:border-l border-gray-200">
           <div className="text-center max-w-md">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 leading-[1.1] tracking-tight">
               {t('heroTitle')}
             </h1>
-            <p className="text-gray-600 text-lg mb-8">
+            <p className="text-gray-600 text-xl mb-10 leading-relaxed">
               {t('heroSubtitle')}
             </p>
             <Link
               href="/products"
-              className="inline-block bg-black hover:bg-white hover:text-black border-2 border-black text-white px-8 py-4 text-lg font-semibold transition-all shadow-lg hover:shadow-xl"
+              className="inline-block bg-gradient-to-r from-black to-gray-900 hover:from-purple-600 hover:to-purple-700 text-white px-10 py-5 text-lg font-semibold transition-all duration-300 shadow-premium-lg hover:shadow-premium-xl rounded-xl transform hover:scale-105"
             >
               {t('heroButton')}
             </Link>
           </div>
         </div>
 
-        {/* Block 3: Bottom Left - B2B Text Block (Black Background) */}
-        <div className="relative h-[50vh] md:h-full bg-black flex items-center justify-center p-8 md:p-12 border-t border-gray-800">
+        {/* Block 3: Bottom Left - B2B Text Block (Dark Gradient) */}
+        <div className="relative h-[50vh] md:h-full bg-gradient-to-br from-gray-900 via-black to-purple-900 flex items-center justify-center p-8 md:p-12 border-t border-gray-800">
           <div className="text-center max-w-md">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
               {t('b2bTitle')}
             </h2>
-            <p className="text-gray-300 text-lg mb-8">
+            <p className="text-gray-300 text-xl mb-10 leading-relaxed">
               {t('b2bSubtitle')}
             </p>
             <a
               href="/b2b-presentation.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white hover:bg-black hover:text-white border-2 border-white text-black px-8 py-4 text-lg font-semibold transition-all shadow-lg hover:shadow-xl"
+              className="inline-block bg-gradient-to-r from-white to-gray-100 hover:from-purple-600 hover:to-purple-700 text-black hover:text-white px-10 py-5 text-lg font-semibold transition-all duration-300 shadow-premium-lg hover:shadow-premium-xl rounded-xl transform hover:scale-105"
             >
               {t('b2bButton')}
             </a>
