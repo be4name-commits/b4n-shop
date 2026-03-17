@@ -1,8 +1,10 @@
-# Robots.txt for be4name.ch
+# Allow all crawlers
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://be4name.ch/sitemap.xml
+
+# Disallow admin/checkout pages (optional)
 Disallow: /api/
 Disallow: /checkout/
-Disallow: /cart/
-
-Sitemap: https://be4name.ch/sitemap.xml

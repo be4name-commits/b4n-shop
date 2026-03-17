@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ShoppingCart } from 'lucide-react';
 import { useCartStore } from '@/lib/store';
+import { getTranslation } from '@/lib/i18n';
 import LanguageSelector from './LanguageSelector';
 import { useLocale } from './LocaleContext';
 
@@ -11,11 +12,12 @@ export default function Navigation() {
   const pathname = usePathname();
   const itemCount = useCartStore((state) => state.items.length);
   const { locale, setLocale } = useLocale();
+  const t = (key: Parameters<typeof getTranslation>[1]) => getTranslation(locale, key);
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/products', label: 'Products' },
-    { href: '/b2b', label: 'B2B' },
+    { href: '/', label: t('home') },
+    { href: '/products', label: t('products') },
+    { href: '/b2b', label: t('b2b') },
   ];
 
   return (

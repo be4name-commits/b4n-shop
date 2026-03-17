@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { useLocale } from '@/components/LocaleContext';
 import { getTranslation } from '@/lib/i18n';
 
-// Товары для первой карусели (ремни и обувь)
+// First carousel items (belts and footwear)
 const carousel1Items = [
   { sku: '21030030033', name: "Women's Belt Black" },
   { sku: '21330030033', name: "Women's Belt Brown" },
@@ -16,7 +16,7 @@ const carousel1Items = [
   { sku: 'LOAFER-ASTRA-BK', name: "Women's Loafers Astra" },
 ];
 
-// Товары для второй карусели (кошельки и косметички)
+// Second carousel items (wallets and cosmetic bags)
 const carousel2Items = [
   { sku: '305610', name: 'Card Case' },
   { sku: '505610', name: 'Compact Wallet' },

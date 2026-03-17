@@ -19,12 +19,24 @@ export default function B2BPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission
-    alert(locale === 'de' ? 'Vielen Dank für Ihre Anfrage! Wir werden uns in Kürze bei Ihnen melden.' :
-          locale === 'fr' ? 'Merci pour votre demande! Nous vous contacterons sous peu.' :
-          locale === 'it' ? 'Grazie per la tua richiesta! Ti contatteremo a breve.' :
-          'Thank you for your inquiry! We will contact you shortly.');
-    setFormData({ company: '', name: '', email: '', phone: '', message: '' });
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, type: 'b2b' }),
+      });
+
+      if (response.ok) {
+        alert(t('requestSent'));
+        setFormData({ company: '', name: '', email: '', phone: '', message: '' });
+      } else {
+        alert('Error sending request. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Error sending request. Please try again.');
+    }
   };
 
   return (
@@ -82,10 +94,7 @@ export default function B2BPage() {
           <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-xl p-12 text-center border-2 border-purple-100">
             <h3 className="text-3xl font-bold mb-4 text-gray-900">{t('partnerPresentation')}</h3>
             <p className="text-gray-600 mb-8 text-lg">
-              {locale === 'de' ? 'Laden Sie die detaillierte Präsentation mit Kooperationsbedingungen herunter' :
-               locale === 'fr' ? 'Téléchargez la présentation détaillée avec les conditions de coopération' :
-               locale === 'it' ? 'Scarica la presentazione dettagliata con le condizioni di cooperazione' :
-               'Download the detailed presentation with cooperation terms'}
+              {t('downloadPDF')}
             </p>
             <a
               href="/b2b-presentation.pdf"
@@ -141,15 +150,10 @@ export default function B2BPage() {
                 </div>
                 <div>
                   <div className="font-semibold text-lg text-gray-900 mb-1">
-                    {locale === 'de' ? 'Adresse' :
-                     locale === 'fr' ? 'Adresse' :
-                     locale === 'it' ? 'Indirizzo' : 'Address'}
+                    {t('address')}
                   </div>
-                  <p className="text-gray-600 text-lg leading-relaxed">
-                    {locale === 'de' ? 'Schweiz\n(Adresse wird angegeben)' :
-                     locale === 'fr' ? 'Suisse\n(adresse à préciser)' :
-                     locale === 'it' ? 'Svizzera\n(indirizzo da specificare)' :
-                     'Switzerland\n(address to be specified)'}
+                  <p className="text-gray-600 text-lg leading-relaxed whitespace-pre-line">
+                    {t('addressPlaceholder')}
                   </p>
                 </div>
               </div>

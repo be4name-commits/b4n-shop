@@ -81,40 +81,6 @@ export const useCartStore = create<CartStore>()(
     }),
     {
       name: 'b4n-cart-storage',
-      // Enhanced persistence configuration
-      storage: {
-        getItem: (name) => {
-          const str = localStorage.getItem(name);
-          if (!str) return null;
-          try {
-            return JSON.parse(str);
-          } catch {
-            return null;
-          }
-        },
-        setItem: (name, value) => {
-          try {
-            localStorage.setItem(name, JSON.stringify(value));
-            // Also save to sessionStorage as backup
-            sessionStorage.setItem(name, JSON.stringify(value));
-          } catch (error) {
-            console.error('Error saving cart:', error);
-          }
-        },
-        removeItem: (name) => {
-          localStorage.removeItem(name);
-          sessionStorage.removeItem(name);
-        },
-      },
-      // Only persist the items, not the methods
-      partialize: (state) => ({ items: state.items }),
-      // Merge strategy for rehydration
-      merge: (persistedState, currentState) => {
-        if (persistedState && typeof persistedState === 'object' && 'items' in persistedState) {
-          return { ...currentState, items: persistedState.items as CartItem[] };
-        }
-        return currentState;
-      },
     }
   )
 );

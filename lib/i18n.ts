@@ -6,6 +6,7 @@ export const defaultLocale: Locale = 'en';
 
 export const translations = {
   en: {
+    // Navigation
     catalog: 'Product Catalog',
     search: 'Search products...',
     cart: 'Cart',
@@ -14,6 +15,15 @@ export const translations = {
     home: 'Home',
     products: 'Products',
     allCategories: 'All Categories',
+    // Additional B2B
+    address: 'Address',
+    addressPlaceholder: 'Switzerland\n(address to be specified)',
+    requestSent: 'Thank you for your inquiry! We will contact you shortly.',
+    // Footer
+    about: 'About Us',
+    shipping: 'Shipping & Payment',
+    returns: 'Returns',
+    contact: 'Contact',
     price: 'Price',
     addToCart: 'Add to Cart',
     buy: 'Buy Now',
@@ -65,6 +75,7 @@ export const translations = {
     backToHome: 'Back to Home',
   },
   de: {
+    // Navigation
     catalog: 'Produktkatalog',
     search: 'Produkte suchen...',
     cart: 'Warenkorb',
@@ -73,6 +84,15 @@ export const translations = {
     home: 'Startseite',
     products: 'Produkte',
     allCategories: 'Alle Kategorien',
+    // Additional B2B
+    address: 'Adresse',
+    addressPlaceholder: 'Schweiz\n(Adresse wird angegeben)',
+    requestSent: 'Vielen Dank für Ihre Anfrage! Wir werden uns in Kürze bei Ihnen melden.',
+    // Footer
+    about: 'Über uns',
+    shipping: 'Versand & Zahlung',
+    returns: 'Rückgabe',
+    contact: 'Kontakt',
     price: 'Preis',
     addToCart: 'In den Warenkorb',
     buy: 'Jetzt kaufen',
@@ -124,6 +144,7 @@ export const translations = {
     backToHome: 'Zurück zur Startseite',
   },
   fr: {
+    // Navigation
     catalog: 'Catalogue de produits',
     search: 'Rechercher des produits...',
     cart: 'Panier',
@@ -132,6 +153,15 @@ export const translations = {
     home: 'Accueil',
     products: 'Produits',
     allCategories: 'Toutes les catégories',
+    // Additional B2B
+    address: 'Adresse',
+    addressPlaceholder: 'Suisse\n(adresse à préciser)',
+    requestSent: 'Merci pour votre demande! Nous vous contacterons sous peu.',
+    // Footer
+    about: 'À propos',
+    shipping: 'Livraison & Paiement',
+    returns: 'Retours',
+    contact: 'Contact',
     price: 'Prix',
     addToCart: 'Ajouter au panier',
     buy: 'Acheter maintenant',
@@ -183,6 +213,7 @@ export const translations = {
     backToHome: 'Retour à l\'accueil',
   },
   it: {
+    // Navigation
     catalog: 'Catalogo prodotti',
     search: 'Cerca prodotti...',
     cart: 'Carrello',
@@ -191,6 +222,15 @@ export const translations = {
     home: 'Home',
     products: 'Prodotti',
     allCategories: 'Tutte le categorie',
+    // Additional B2B
+    address: 'Indirizzo',
+    addressPlaceholder: 'Svizzera\n(indirizzo da specificare)',
+    requestSent: 'Grazie per la tua richiesta! Ti contatteremo a breve.',
+    // Footer
+    about: 'Chi siamo',
+    shipping: 'Spedizione & Pagamento',
+    returns: 'Resi',
+    contact: 'Contatto',
     price: 'Prezzo',
     addToCart: 'Aggiungi al carrello',
     buy: 'Acquista ora',
