@@ -3,10 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { useLocale } from '@/components/LocaleContext';
-import { getTranslation } from '@/lib/i18n';
 
-// First carousel items (belts and footwear)
+// Товары для первой карусели (ремни и обувь)
 const carousel1Items = [
   { sku: '21030030033', name: "Women's Belt Black" },
   { sku: '21330030033', name: "Women's Belt Brown" },
@@ -16,7 +14,7 @@ const carousel1Items = [
   { sku: 'LOAFER-ASTRA-BK', name: "Women's Loafers Astra" },
 ];
 
-// Second carousel items (wallets and cosmetic bags)
+// Товары для второй карусели (кошельки и косметички)
 const carousel2Items = [
   { sku: '305610', name: 'Card Case' },
   { sku: '505610', name: 'Compact Wallet' },
@@ -111,9 +109,6 @@ function ProductCarousel({ items }: { items: typeof carousel1Items }) {
 }
 
 export default function Home() {
-  const { locale } = useLocale();
-  const t = (key: keyof typeof import('@/lib/i18n').translations.en) => getTranslation(locale, key);
-
   return (
     <main className="min-h-screen bg-white">
       {/* 2x2 Grid Container */}
@@ -123,46 +118,57 @@ export default function Home() {
           <ProductCarousel items={carousel1Items} />
         </div>
 
-        {/* Block 2: Top Right - Text Block with CTA */}
-        <div className="relative h-[50vh] md:h-full bg-gradient-to-br from-white to-gray-50 flex items-center justify-center p-8 md:p-12 border-b md:border-b-0 md:border-l border-gray-200">
-          <div className="text-center max-w-md">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 leading-[1.1] tracking-tight">
-              {t('heroTitle')}
+        {/* Block 2: Top Right - Philosophy */}
+        <div className="relative h-[50vh] md:h-full bg-white flex items-center justify-center p-8 md:p-12">
+          <div className="text-center max-w-2xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
+              Unsere Philosophie
             </h1>
-            <p className="text-gray-600 text-xl mb-10 leading-relaxed">
-              {t('heroSubtitle')}
+            <h2 className="text-2xl md:text-3xl font-semibold text-black mb-4">
+              Wahre Qualität braucht kein Logo
+            </h2>
+            <p className="text-gray-700 text-base md:text-lg mb-6 leading-relaxed">
+              Bei Be4Name glauben wir an die Kraft des Understatements. In einer Welt, in der Marken oft lauter sind als die Produkte selbst, gehen wir einen anderen Weg. Wir kreieren handgefertigte Premium-Lederwaren ohne sichtbare Logos – denn wahre Handwerkskunst spricht für sich allein.
+            </p>
+            <p className="text-gray-700 text-base md:text-lg mb-6 leading-relaxed">
+              Es geht nur um Sie und die fühlbare Qualität Ihres Lieblingsstücks. Nur erstklassiges Leder und ein zeitloses Design, das sich nicht aufdrängt, sondern Ihren persönlichen Stil unterstreicht.
+            </p>
+            <p className="text-gray-700 text-base md:text-lg mb-8 leading-relaxed font-semibold">
+              Unsere Produkte begleiten Sie nicht nur – sie gewinnen mit den Jahren an Charakter, genau wie Sie.
+            </p>
+            <p className="text-black text-xl md:text-2xl font-bold mb-8">
+              Be4Name – Für Menschen, die Wert auf Substanz statt auf Status legen.
             </p>
             <Link
               href="/products"
-              className="inline-block bg-gradient-to-r from-black to-gray-900 hover:from-purple-600 hover:to-purple-700 text-white px-10 py-5 text-lg font-semibold transition-all duration-300 shadow-premium-lg hover:shadow-premium-xl rounded-xl transform hover:scale-105"
+              className="inline-block bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold transition-colors"
             >
-              {t('heroButton')}
+              Kollektion ansehen
             </Link>
           </div>
         </div>
 
-        {/* Block 3: Bottom Left - B2B Text Block (Dark Gradient) */}
-        <div className="relative h-[50vh] md:h-full bg-gradient-to-br from-gray-900 via-black to-purple-900 flex items-center justify-center p-8 md:p-12 border-t border-gray-800">
+        {/* Block 3: Bottom Left - B2B Text Block (Black Background) */}
+        <div className="relative h-[50vh] md:h-full bg-black flex items-center justify-center p-8 md:p-12">
           <div className="text-center max-w-md">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
-              {t('b2bTitle')}
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              B2B Partners Welcome
             </h2>
-            <p className="text-gray-300 text-xl mb-10 leading-relaxed">
-              {t('b2bSubtitle')}
+            <p className="text-gray-300 text-lg mb-8">
+              Special wholesale pricing for retailers
             </p>
             <a
               href="/b2b-presentation.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-gradient-to-r from-white to-gray-100 hover:from-purple-600 hover:to-purple-700 text-black hover:text-white px-10 py-5 text-lg font-semibold transition-all duration-300 shadow-premium-lg hover:shadow-premium-xl rounded-xl transform hover:scale-105"
+              download
+              className="inline-block bg-white hover:bg-gray-200 text-black px-8 py-4 text-lg font-semibold transition-colors"
             >
-              {t('b2bButton')}
+              Download Catalog
             </a>
           </div>
         </div>
 
         {/* Block 4: Bottom Right - Carousel 2 (Wallets & Cosmetic Bags) */}
-        <div className="relative h-[50vh] md:h-full bg-gray-100 border-t md:border-l border-gray-200">
+        <div className="relative h-[50vh] md:h-full bg-gray-100">
           <ProductCarousel items={carousel2Items} />
         </div>
       </div>

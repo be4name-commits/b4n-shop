@@ -40,7 +40,7 @@ export default function ProductFilters({
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Search products..."
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
         />
       </div>
 
@@ -52,7 +52,7 @@ export default function ProductFilters({
         <select
           value={selectedCategory}
           onChange={(e) => onCategoryChange(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
         >
           <option value="">All Categories</option>
           {categories.map((cat) => (
@@ -74,7 +74,7 @@ export default function ProductFilters({
             value={minPrice}
             onChange={(e) => setMinPrice(Number(e.target.value))}
             placeholder="Min"
-            className="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+            className="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black"
           />
           <span className="text-gray-500">—</span>
           <input
@@ -82,11 +82,11 @@ export default function ProductFilters({
             value={maxPrice}
             onChange={(e) => setMaxPrice(Number(e.target.value))}
             placeholder="Max"
-            className="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+            className="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black"
           />
           <button
             onClick={handlePriceSubmit}
-            className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-semibold"
+            className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-semibold"
           >
             Apply
           </button>

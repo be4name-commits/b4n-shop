@@ -57,7 +57,7 @@ export default function CheckoutPage() {
           <h1 className="text-2xl font-bold mb-4">Корзина пуста</h1>
           <button
             onClick={() => router.push('/products')}
-            className="text-purple-600 hover:underline"
+            className="text-black hover:underline"
           >
             Вернуться к каталогу
           </button>
@@ -90,7 +90,7 @@ export default function CheckoutPage() {
 
           <div className="flex justify-between items-center text-2xl font-bold border-t pt-4">
             <span>Итого:</span>
-            <span className="text-purple-600">{getTotal().toFixed(2)} CHF</span>
+            <span className="text-black">{getTotal().toFixed(2)} CHF</span>
           </div>
         </div>
 
@@ -109,7 +109,7 @@ export default function CheckoutPage() {
           <button
             onClick={handleCheckout}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-3 bg-purple-600 hover:bg-purple-700 text-white py-4 rounded-lg text-lg font-semibold transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-3 bg-black hover:bg-gray-800 text-white py-4 rounded-lg text-lg font-semibold transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
             <CreditCard className="w-6 h-6" />
             {loading ? 'Загрузка...' : 'Перейти к оплате'}

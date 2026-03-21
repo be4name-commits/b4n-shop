@@ -51,26 +51,14 @@ export async function POST(request: NextRequest) {
       quantity: item.quantity,
     }));
 
-    // Create Checkout Session with TWINT support (critical for Switzerland)
+    // Create Checkout Session
     const session = await stripe.checkout.sessions.create({
-      // TWINT is critical for Swiss market - always include it
-      payment_method_types: ['card', 'twint'],
+      payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
       success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cart`,
-      // Auto-detect locale for proper TWINT display
       locale: 'auto',
-      // Additional settings for Swiss market
-      billing_address_collection: 'auto',
-      shipping_address_collection: {
-        allowed_countries: ['CH', 'DE', 'AT', 'FR', 'IT', 'LI'],
-      },
-      // Metadata for order tracking
-      metadata: {
-        orderDate: new Date().toISOString(),
-        cartItemsCount: items.length.toString(),
-      },
     });
 
     return NextResponse.json({ sessionId: session.id, url: session.url });

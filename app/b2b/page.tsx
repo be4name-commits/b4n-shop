@@ -2,233 +2,204 @@
 
 import { useState } from 'react';
 import { Download, Mail, Phone, MapPin } from 'lucide-react';
-import { useLocale } from '@/components/LocaleContext';
-import { getTranslation } from '@/lib/i18n';
 
 export default function B2BPage() {
-  const { locale } = useLocale();
-  const t = (key: Parameters<typeof getTranslation>[1]) => getTranslation(locale, key);
-  
   const [formData, setFormData] = useState({
     company: '',
     name: '',
     email: '',
-    phone: '',
-    message: '',
   });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, type: 'b2b' }),
-      });
-
-      if (response.ok) {
-        alert(t('requestSent'));
-        setFormData({ company: '', name: '', email: '', phone: '', message: '' });
-      } else {
-        alert('Error sending request. Please try again.');
-      }
-    } catch (error) {
-      console.error('Form submission error:', error);
-      alert('Error sending request. Please try again.');
-    }
+    // Mark as submitted
+    setSubmitted(true);
+    
+    // Trigger PDF download
+    const link = document.createElement('a');
+    link.href = '/b2b-presentation.pdf';
+    link.download = 'Be4Name-B2B-Presentation.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Show success message
+    alert('Спасибо! Презентация скачивается. Мы свяжемся с вами в ближайшее время.');
+    
+    // Reset form after a delay
+    setTimeout(() => {
+      setFormData({ company: '', name: '', email: '' });
+      setSubmitted(false);
+    }, 3000);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white py-24 px-4 overflow-hidden">
-        {/* Premium background effect */}
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-        
-        <div className="relative max-w-4xl mx-auto text-center">
-          <h1 className="text-6xl font-bold mb-6 tracking-tight">
-            {t('b2bPartnership')}
-          </h1>
-          <p className="text-xl text-purple-200 leading-relaxed">
-            {t('b2bPartnershipSubtitle')}
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero */}
+      <section className="bg-black text-white py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl font-bold mb-6">B2B Партнерство</h1>
+          <p className="text-xl text-gray-300">
+            Специальные условия для оптовых клиентов и партнеров
           </p>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 px-4">
+      {/* Benefits */}
+      <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
-            {t('benefits')}
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Преимущества сотрудничества
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white p-10 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-              <div className="text-5xl mb-6">💼</div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">{t('wholesalePrices')}</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {t('wholesalePricesDesc')}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <div className="text-4xl mb-4">💼</div>
+              <h3 className="text-xl font-bold mb-3">Оптовые цены</h3>
+              <p className="text-gray-600">
+                Специальные скидки для постоянных партнеров и крупных заказов
               </p>
             </div>
             
-            <div className="bg-white p-10 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-              <div className="text-5xl mb-6">🚚</div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">{t('directDelivery')}</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {t('directDeliveryDesc')}
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <div className="text-4xl mb-4">🚚</div>
+              <h3 className="text-xl font-bold mb-3">Прямая поставка</h3>
+              <p className="text-gray-600">
+                Доставка напрямую из Швейцарии с минимальными сроками
               </p>
             </div>
             
-            <div className="bg-white p-10 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-              <div className="text-5xl mb-6">🤝</div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">{t('personalManager')}</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {t('personalManagerDesc')}
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <div className="text-4xl mb-4">🤝</div>
+              <h3 className="text-xl font-bold mb-3">Личный менеджер</h3>
+              <p className="text-gray-600">
+                Индивидуальный подход и поддержка на всех этапах сотрудничества
               </p>
             </div>
           </div>
 
-          {/* Presentation Download */}
-          <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-xl p-12 text-center border-2 border-purple-100">
-            <h3 className="text-3xl font-bold mb-4 text-gray-900">{t('partnerPresentation')}</h3>
-            <p className="text-gray-600 mb-8 text-lg">
-              {t('downloadPDF')}
+          {/* Presentation Download - Form Protected */}
+          <div className="bg-white rounded-lg shadow-lg p-8 text-center mb-12">
+            <h3 className="text-2xl font-bold mb-4">Презентация для партнеров</h3>
+            <p className="text-gray-600 mb-6">
+              Заполните форму ниже, чтобы получить доступ к презентации
             </p>
-            <a
-              href="/b2b-presentation.pdf"
-              download="B4N_B2B_Presentation.pdf"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-10 py-5 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <Download className="w-6 h-6" />
-              {t('downloadPDF')}
-            </a>
+            <p className="text-sm text-gray-500 mb-6">
+              (Скачивание доступно после заполнения формы в разделе "Связаться с нами" ниже)
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
-            {t('contactUs')}
+      {/* Contact Form */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Связаться с нами
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
-            <div className="space-y-8">
-              <h3 className="text-2xl font-bold mb-8 text-gray-900">{t('contactInfo')}</h3>
+            <div>
+              <h3 className="text-xl font-bold mb-6">Контактная информация</h3>
               
-              <div className="flex items-start gap-5">
-                <div className="bg-purple-100 p-4 rounded-xl">
-                  <Mail className="w-7 h-7 text-purple-600" />
-                </div>
-                <div>
-                  <div className="font-semibold text-lg text-gray-900 mb-1">Email</div>
-                  <a href="mailto:b2b@be4name.ch" className="text-purple-600 hover:text-purple-700 text-lg transition-colors">
-                    b2b@be4name.ch
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-5">
-                <div className="bg-purple-100 p-4 rounded-xl">
-                  <Phone className="w-7 h-7 text-purple-600" />
-                </div>
-                <div>
-                  <div className="font-semibold text-lg text-gray-900 mb-1">{t('phone')}</div>
-                  <a href="tel:+41123456789" className="text-purple-600 hover:text-purple-700 text-lg transition-colors">
-                    +41 12 345 67 89
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-5">
-                <div className="bg-purple-100 p-4 rounded-xl">
-                  <MapPin className="w-7 h-7 text-purple-600" />
-                </div>
-                <div>
-                  <div className="font-semibold text-lg text-gray-900 mb-1">
-                    {t('address')}
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <Mail className="w-6 h-6 text-black flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-semibold">Email</div>
+                    <a href="mailto:be4name@gmail.com" className="text-black hover:underline">
+                      be4name@gmail.com
+                    </a>
                   </div>
-                  <p className="text-gray-600 text-lg leading-relaxed whitespace-pre-line">
-                    {t('addressPlaceholder')}
-                  </p>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <Phone className="w-6 h-6 text-black flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-semibold">Телефон</div>
+                    <a href="tel:+41796608159" className="text-black hover:underline">
+                      +41 79 660 81 59
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <MapPin className="w-6 h-6 text-black flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-semibold">Условия</div>
+                    <p className="text-gray-600">
+                      • Бесплатная доставка от 299 CHF<br />
+                      • Возврат 14 дней
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-2xl shadow-lg">
-              <div>
-                <label className="block text-sm font-semibold mb-3 text-gray-900">
-                  {t('company')} *
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all text-gray-900"
-                />
-              </div>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <p className="text-sm text-gray-600 mb-4">
+                Заполните форму, чтобы получить B2B презентацию
+              </p>
               
               <div>
-                <label className="block text-sm font-semibold mb-3 text-gray-900">
-                  {t('yourName')} *
+                <label className="block text-sm font-semibold mb-2">
+                  Имя *
                 </label>
                 <input
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                  disabled={submitted}
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-semibold mb-3 text-gray-900">
-                  {t('email')} *
+                <label className="block text-sm font-semibold mb-2">
+                  Email *
                 </label>
                 <input
                   type="email"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                  disabled={submitted}
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-semibold mb-3 text-gray-900">
-                  {t('phone')}
+                <label className="block text-sm font-semibold mb-2">
+                  Компания *
                 </label>
                 <input
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all text-gray-900"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-semibold mb-3 text-gray-900">
-                  {t('message')}
-                </label>
-                <textarea
-                  rows={5}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all resize-none text-gray-900"
+                  type="text"
+                  required
+                  value={formData.company}
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                  disabled={submitted}
                 />
               </div>
               
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-5 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+                disabled={submitted}
+                className="w-full bg-black hover:bg-gray-800 text-white py-4 rounded-lg font-semibold transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                {t('sendRequest')}
+                {submitted ? (
+                  <>Скачивание...</>
+                ) : (
+                  <>
+                    <Download className="w-5 h-5" />
+                    Получить презентацию
+                  </>
+                )}
               </button>
             </form>
           </div>

@@ -38,7 +38,7 @@ export default function LanguageSelector({ currentLocale, onLocaleChange }: Lang
                 setIsOpen(false);
               }}
               className={`w-full px-4 py-2 text-left hover:bg-gray-100 transition-colors flex items-center gap-3 ${
-                currentLocale === locale ? 'bg-purple-50 text-purple-600' : ''
+                currentLocale === locale ? 'bg-gray-100 text-black' : ''
               }`}
             >
               <span className="text-xl">

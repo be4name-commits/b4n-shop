@@ -1,29 +1,28 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ShoppingCart } from 'lucide-react';
 import { useCartStore } from '@/lib/store';
-import { getTranslation } from '@/lib/i18n';
 import LanguageSelector from './LanguageSelector';
-import { useLocale } from './LocaleContext';
+import { Locale } from '@/lib/i18n';
 
 export default function Navigation() {
   const pathname = usePathname();
   const itemCount = useCartStore((state) => state.items.length);
-  const { locale, setLocale } = useLocale();
-  const t = (key: Parameters<typeof getTranslation>[1]) => getTranslation(locale, key);
+  const [currentLocale, setCurrentLocale] = useState<Locale>('en');
 
   const navLinks = [
-    { href: '/', label: t('home') },
-    { href: '/products', label: t('products') },
-    { href: '/b2b', label: t('b2b') },
+    { href: '/', label: 'Home' },
+    { href: '/products', label: 'Products' },
+    { href: '/b2b', label: 'B2B' },
   ];
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-purple-600">
+        <Link href="/" className="text-2xl font-bold text-black">
           B4N
         </Link>
         
@@ -32,8 +31,8 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-gray-700 hover:text-purple-600 transition-colors ${
-                pathname === link.href ? 'text-purple-600 font-semibold' : ''
+              className={`text-gray-700 hover:text-black transition-colors ${
+                pathname === link.href ? 'text-black font-semibold' : ''
               }`}
             >
               {link.label}
@@ -41,8 +40,8 @@ export default function Navigation() {
           ))}
           
           <LanguageSelector
-            currentLocale={locale}
-            onLocaleChange={setLocale}
+            currentLocale={currentLocale}
+            onLocaleChange={setCurrentLocale}
           />
           
           <Link
@@ -51,7 +50,7 @@ export default function Navigation() {
           >
             <ShoppingCart className="w-6 h-6" />
             {itemCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-purple-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-black text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                 {itemCount}
               </span>
             )}
