@@ -148,24 +148,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Block 3: Bottom Left - B2B Text Block (Black Background) */}
-        <div className="relative h-[50vh] md:h-full bg-black flex items-center justify-center p-8 md:p-12">
-          <div className="text-center max-w-md">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              B2B Partners Welcome
-            </h2>
-            <p className="text-gray-300 text-lg mb-8">
-              Special wholesale pricing for retailers
-            </p>
-            <a
-              href="/b2b-presentation.pdf"
-              download
-              className="inline-block bg-white hover:bg-gray-200 text-black px-8 py-4 text-lg font-semibold transition-colors"
-            >
-              Download Catalog
-            </a>
-          </div>
-        </div>
+        
 
         {/* Block 4: Bottom Right - Carousel 2 (Wallets & Cosmetic Bags) */}
         <div className="relative h-[50vh] md:h-full bg-gray-100">

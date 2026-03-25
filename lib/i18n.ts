@@ -1,8 +1,109 @@
+import { usePathname } from 'next/navigation';
+
 export type Locale = 'en' | 'de' | 'fr' | 'it';
 
 export const locales: Locale[] = ['en', 'de', 'fr', 'it'];
 
-export const defaultLocale: Locale = 'en';
+export const defaultLocale: Locale = 'de';
+
+const b2bTranslations = {
+  en: {
+    b2bPartnership: 'B2B Partnership',
+    b2bSpecialConditions: 'Special conditions for wholesale clients and partners',
+    cooperationAdvantages: 'Advantages of cooperation',
+    wholesalePrices: 'Wholesale prices',
+    wholesalePricesDesc: 'Special discounts for regular partners and large orders',
+    directDelivery: 'Direct delivery',
+    directDeliveryDesc: 'Delivery directly from Switzerland with minimum terms',
+    personalManager: 'Personal manager',
+    personalManagerDesc: 'Individual approach and support at all stages of cooperation',
+    partnerPresentation: 'Presentation for partners',
+    partnerPresentationDesc: 'Fill out the form below to get access to the presentation',
+    downloadHint: '(Download is available after filling out the form in the "Contact us" section below)',
+    contactUs: 'Contact us',
+    contactInfo: 'Contact information',
+    terms: 'Terms',
+    formHint: 'Fill out the form to get the B2B presentation',
+    company: 'Company *',
+    name: 'Name *',
+    email: 'Email *',
+    getPresentation: 'Get presentation',
+    downloading: 'Downloading...',
+    thankYou: 'Thank you! The presentation is downloading. We will contact you shortly.',
+  },
+  de: {
+    b2bPartnership: 'B2B Partnerschaft',
+    b2bSpecialConditions: 'Sonderkonditionen für Grosskunden und Partner',
+    cooperationAdvantages: 'Vorteile der Zusammenarbeit',
+    wholesalePrices: 'Grosshandelspreise',
+    wholesalePricesDesc: 'Spezielle Rabatte für Stammpartner und Grossbestellungen',
+    directDelivery: 'Direktlieferung',
+    directDeliveryDesc: 'Lieferung direkt aus der Schweiz mit minimalen Fristen',
+    personalManager: 'Persönlicher Manager',
+    personalManagerDesc: 'Individueller Ansatz und Unterstützung in allen Phasen der Zusammenarbeit',
+    partnerPresentation: 'Präsentation für Partner',
+    partnerPresentationDesc: 'Füllen Sie das untenstehende Formular aus, um Zugang zur Präsentation zu erhalten',
+    downloadHint: '(Der Download ist nach dem Ausfüllen des Formulars im Abschnitt "Kontaktieren Sie uns" unten verfügbar)',
+    contactUs: 'Kontaktieren Sie uns',
+    contactInfo: 'Kontaktinformationen',
+    terms: 'Bedingungen',
+    formHint: 'Füllen Sie das Formular aus, um die B2B-Präsentation zu erhalten',
+    company: 'Firma *',
+    name: 'Name *',
+    email: 'E-Mail *',
+    getPresentation: 'Präsentation erhalten',
+    downloading: 'Wird heruntergeladen...',
+    thankYou: 'Danke! Die Präsentation wird heruntergeladen. Wir werden Sie in Kürze kontaktieren.',
+  },
+  fr: {
+    b2bPartnership: 'Partenariat B2B',
+    b2bSpecialConditions: 'Conditions spéciales pour les clients professionnels et les partenaires',
+    cooperationAdvantages: 'Avantages de la coopération',
+    wholesalePrices: 'Prix de gros',
+    wholesalePricesDesc: 'Réductions spéciales pour les partenaires réguliers et les grosses commandes',
+    directDelivery: 'Livraison directe',
+    directDeliveryDesc: 'Livraison directe depuis la Suisse avec des délais minimaux',
+    personalManager: 'Manager personnel',
+    personalManagerDesc: 'Approche individuelle et soutien à toutes les étapes de la coopération',
+    partnerPresentation: 'Présentation pour les partenaires',
+    partnerPresentationDesc: 'Remplissez le formulaire ci-dessous pour accéder à la présentation',
+    downloadHint: '(Le téléchargement est disponible après avoir rempli le formulaire dans la section "Contactez-nous" ci-dessous)',
+    contactUs: 'Contactez-nous',
+    contactInfo: 'Informations de contact',
+    terms: 'Conditions',
+    formHint: 'Remplissez le formulaire pour obtenir la présentation B2B',
+    company: 'Entreprise *',
+    name: 'Nom *',
+    email: 'E-mail *',
+    getPresentation: 'Obtenir la présentation',
+    downloading: 'Téléchargement...',
+    thankYou: 'Merci! La présentation est en cours de téléchargement. Nous vous contacterons sous peu.',
+  },
+  it: {
+    b2bPartnership: 'Partnership B2B',
+    b2bSpecialConditions: 'Condizioni speciali per clienti grossisti e partner',
+    cooperationAdvantages: 'Vantaggi della cooperazione',
+    wholesalePrices: 'Prezzi all\'ingrosso',
+    wholesalePricesDesc: 'Sconti speciali per partner abituali e grandi ordini',
+    directDelivery: 'Consegna diretta',
+    directDeliveryDesc: 'Consegna diretta dalla Svizzera con tempi minimi',
+    personalManager: 'Manager personale',
+    personalManagerDesc: 'Approccio individuale e supporto in tutte le fasi della cooperazione',
+    partnerPresentation: 'Presentazione per i partner',
+    partnerPresentationDesc: 'Compila il modulo sottostante per accedere alla presentazione',
+    downloadHint: '(Il download è disponibile dopo aver compilato il modulo nella sezione "Contattaci" qui sotto)',
+    contactUs: 'Contattaci',
+    contactInfo: 'Informazioni di contatto',
+    terms: 'Termini',
+    formHint: 'Compila il modulo per ottenere la presentazione B2B',
+    company: 'Azienda *',
+    name: 'Nome *',
+    email: 'E-mail *',
+    getPresentation: 'Ottieni la presentazione',
+    downloading: 'Scaricamento in corso...',
+    thankYou: 'Grazie! La presentazione è in fase di download. Ti contatteremo a breve.',
+  },
+};
 
 export const translations = {
   en: {
@@ -36,6 +137,7 @@ export const translations = {
     total: 'Total',
     proceedToCheckout: 'Proceed to Checkout',
     shopCollection: 'Shop Collection',
+    ...b2bTranslations.en,
   },
   de: {
     catalog: 'Produktkatalog',
@@ -68,6 +170,7 @@ export const translations = {
     total: 'Gesamt',
     proceedToCheckout: 'Zur Kasse',
     shopCollection: 'Kollektion ansehen',
+    ...b2bTranslations.de,
   },
   fr: {
     catalog: 'Catalogue de produits',
@@ -100,6 +203,7 @@ export const translations = {
     total: 'Total',
     proceedToCheckout: 'Passer à la caisse',
     shopCollection: 'Voir la collection',
+    ...b2bTranslations.fr,
   },
   it: {
     catalog: 'Catalogo prodotti',
@@ -132,9 +236,21 @@ export const translations = {
     total: 'Totale',
     proceedToCheckout: 'Procedi al pagamento',
     shopCollection: 'Vedi la collezione',
+    ...b2bTranslations.it,
   },
 };
 
 export function getTranslation(locale: Locale, key: keyof typeof translations.en): string {
-  return translations[locale][key] || translations.en[key];
+  return translations[locale]?.[key] || translations.en[key];
 }
+
+export const useTranslation = () => {
+  const pathname = usePathname();
+  const locale = (pathname.split('/')[1] as Locale) || defaultLocale;
+
+  const t = (key: keyof (typeof translations)['de']) => {
+    return translations[locale]?.[key] ?? translations[defaultLocale][key];
+  };
+
+  return { t, locale };
+};
