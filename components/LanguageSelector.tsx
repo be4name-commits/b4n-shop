@@ -1,21 +1,28 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import { Locale, locales } from '@/lib/i18n';
 
 interface LanguageSelectorProps {
   currentLocale: Locale;
-  onLocaleChange: (locale: Locale) => void;
 }
 
-export default function LanguageSelector({ currentLocale, onLocaleChange }: LanguageSelectorProps) {
+export default function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const languageNames: Record<Locale, string> = {
     en: 'English',
     de: 'Deutsch',
     fr: 'Français',
     it: 'Italiano',
+  };
+
+  const onLocaleChange = (locale: Locale) => {
+    const newPath = pathname.replace(`/${currentLocale}`, `/${locale}`);
+    router.push(newPath);
   };
 
   return (
